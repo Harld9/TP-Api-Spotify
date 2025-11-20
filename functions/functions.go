@@ -60,3 +60,64 @@ func RefreshToken() {
 	// Affichage des données
 	fmt.Println(decodeData)
 }
+
+func GetDamsosAlbums() {
+
+	type ApiData struct {
+		Items []struct {
+			Images []struct {
+				Url string `json:"url"`
+			} `json:"images"`
+			Release_Date string `json:"release_date"`
+			Name         string `json:"name"`
+			Total_Tracks int    `json:"total_tracks"`
+		} `json:"items"`
+	}
+
+	// URL de L'API
+	urlApi := "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie/albums"
+
+	// Initialisation du client HTTP qui va émettre/demander les requêtes
+	httpClient := http.Client{
+		Timeout: time.Second * 2, // Timeout apres 2sec
+	}
+
+	// Création de la requête HTTP vers L'API avec initialisation de la methode HTTP, la route et le corps de la requête
+	req, errReq := http.NewRequest(http.MethodGet, urlApi, nil)
+	if errReq != nil {
+		fmt.Println("Oupss, une erreur est survenue : ", errReq.Error())
+		return
+	}
+
+	// Ajout d'une métadonnée dans le header, User_Agent permet d'identifier l'application, système ....
+	req.Header.Add("Authorization", "Bearer BQC6bPxdRHfFYit3lpWBI-E9OVXy64nHXCe-Hk6Ru-zgfFheF1P4TJmeUwvdPkcVLJ-cNogjCIB1MNhiJOmxNQjecFUs3zB1oKTA4ZwIvz8Z_Ptob0SOo2NLbxBavBT-u0NCg12tCS0")
+
+	// Execution de la requête HTTP vars L'API
+	res, errResp := httpClient.Do(req)
+	if errResp != nil {
+		fmt.Println("Oupss, une erreur est survenue : ", errResp.Error())
+		return
+	}
+
+	if res.Body != nil {
+		defer res.Body.Close()
+	}
+
+	// Lecture et récupération du corps de la requête HTTP
+	body, errBody := io.ReadAll(res.Body)
+	if errBody != nil {
+		fmt.Println("Oupss, une erreur est survenue : ", errBody.Error())
+	}
+
+	// Déclaration de la variable qui va contenir les données
+	var decodeData ApiData
+
+	// Decodage des données en format JSON et ajout des donnée à la variable: decodeData
+	json.Unmarshal(body, &decodeData)
+
+	// Affichage des données
+	fmt.Println(decodeData.Items[0].Name)
+	fmt.Println(decodeData.Items[0].Total_Tracks)
+	fmt.Println(decodeData.Items[0].Release_Date)
+	fmt.Println(decodeData.Items[0].Images[0])
+}
