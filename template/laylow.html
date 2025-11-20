@@ -4,10 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/laylow.css">
 </head>
 
 <body>
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li> <a href="index.html"><img src="/static/spotify-svgrepo-com.svg" alt="Logo Spotify"
+                        class="svgspotify"></a></li>
+            <li><a href="/album/damso" class="nav-links">Albums de Damso</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="maladresse">
+        <img src="/static/Maladresse.jpg" alt="Image du rappeur Damso" class="imagelaylow2">
+        <p>{{ .ArtistName }}</p>
+        <p>{{ .Title }}</p>
+        <p>{{ .Album }}</p>
+        <p> {{ .AlbumCover }}</p>
+        <p>{{ .ReleaseDate }}</p>
+    </div>
 
 </body>
 

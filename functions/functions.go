@@ -17,6 +17,12 @@ type ApiData struct {
 var AccessToken string
 var TokenType string
 
+var ArtistName string
+var Title string
+var Album string
+var AlbumCover string
+var ReleaseDate string
+
 func RefreshToken() {
 	// URL de L'API
 	urlApi := "https://accounts.spotify.com/api/token"
@@ -182,11 +188,10 @@ func GetLaylowsTrack() {
 	// Decodage des données en format JSON et ajout des donnée à la variable: decodeData
 	json.Unmarshal(body, &decodeData)
 
-	//Affichage des données
-	fmt.Println("Nom de l'artiste :", decodeData.Album.Artists[0].Name)
-	fmt.Println("Titre :", decodeData.Name)
-	fmt.Println("Album :", decodeData.Album.Name)
-	fmt.Println("Lien de la cover de l'album :", decodeData.Album.Images[0].Url)
-	fmt.Println("Date de Sortie :", decodeData.Album.ReleaseDate)
+	ArtistName = decodeData.Album.Artists[0].Name
+	Title = decodeData.Name
+	Album = decodeData.Album.Name
+	AlbumCover = decodeData.Album.Images[0].Url
+	ReleaseDate = decodeData.Album.ReleaseDate
 
 }

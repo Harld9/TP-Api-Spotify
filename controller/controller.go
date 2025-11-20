@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"TpSpotify/functions"
 	"html/template"
 	"net/http"
 )
@@ -12,32 +13,33 @@ func renderTemplate(w http.ResponseWriter, filename string, data map[string]stri
 }
 
 type PageData struct {
-	Title   string
-	Message string
+	ArtistName  string
+	Title       string
+	Album       string
+	AlbumCover  string
+	ReleaseDate string
 }
 
 func Home(w http.ResponseWriter, r *http.Request) {
-	data := PageData{
-		Title:   "Accueil",
-		Message: "Bienvenue Au Jeu Puissance 4 🎉",
-	}
+	data := PageData{}
 	tmpl := template.Must(template.ParseFiles("template/index.html"))
 	tmpl.Execute(w, data)
 }
 
 func Damso(w http.ResponseWriter, r *http.Request) {
-	data := PageData{
-		Title:   "Accueil",
-		Message: "Bienvenue Au Jeu Puissance 4 🎉",
-	}
+	data := PageData{}
 	tmpl := template.Must(template.ParseFiles("template/damso.html"))
 	tmpl.Execute(w, data)
 }
 
 func Laylow(w http.ResponseWriter, r *http.Request) {
+	functions.GetLaylowsTrack()
 	data := PageData{
-		Title:   "Accueil",
-		Message: "Bienvenue Au Jeu Puissance 4 🎉",
+		ArtistName:  functions.ArtistName,
+		Title:       functions.Title,
+		Album:       functions.Album,
+		AlbumCover:  functions.AlbumCover,
+		ReleaseDate: functions.ReleaseDate,
 	}
 	tmpl := template.Must(template.ParseFiles("template/laylow.html"))
 	tmpl.Execute(w, data)
