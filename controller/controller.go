@@ -16,6 +16,15 @@ type PageData struct {
 	Message string
 }
 
+func Home(w http.ResponseWriter, r *http.Request) {
+	data := PageData{
+		Title:   "Accueil",
+		Message: "Bienvenue Au Jeu Puissance 4 🎉",
+	}
+	tmpl := template.Must(template.ParseFiles("template/index.html"))
+	tmpl.Execute(w, data)
+}
+
 func Damso(w http.ResponseWriter, r *http.Request) {
 	data := PageData{
 		Title:   "Accueil",
@@ -30,6 +39,6 @@ func Laylow(w http.ResponseWriter, r *http.Request) {
 		Title:   "Accueil",
 		Message: "Bienvenue Au Jeu Puissance 4 🎉",
 	}
-	tmpl := template.Must(template.ParseFiles("template/damso.html"))
+	tmpl := template.Must(template.ParseFiles("template/laylow.html"))
 	tmpl.Execute(w, data)
 }
