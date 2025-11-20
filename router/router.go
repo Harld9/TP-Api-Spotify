@@ -1,7 +1,7 @@
 package router
 
 import (
-	"apispotify/controller"
+	"TpSpotify/controller"
 	"net/http"
 )
 

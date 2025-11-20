@@ -14,6 +14,9 @@ type ApiData struct {
 	AccessToken string `json:"access_token"`
 }
 
+var AccessToken string
+var TokenType string
+
 func RefreshToken() {
 	// URL de L'API
 	urlApi := "https://accounts.spotify.com/api/token"
@@ -57,8 +60,8 @@ func RefreshToken() {
 	// Decodage des données en format JSON et ajout des donnée à la variable: decodeData
 	json.Unmarshal(body, &decodeData)
 
-	// Affichage des données
-	fmt.Println(decodeData)
+	AccessToken = decodeData.AccessToken
+	TokenType = decodeData.TokenType
 }
 
 func GetDamsosAlbums() {
@@ -68,9 +71,9 @@ func GetDamsosAlbums() {
 			Images []struct {
 				Url string `json:"url"`
 			} `json:"images"`
-			Release_Date string `json:"release_date"`
-			Name         string `json:"name"`
-			Total_Tracks int    `json:"total_tracks"`
+			ReleaseDate string `json:"release_date"`
+			Name        string `json:"name"`
+			TotalTracks int    `json:"total_tracks"`
 		} `json:"items"`
 	}
 
@@ -90,7 +93,7 @@ func GetDamsosAlbums() {
 	}
 
 	// Ajout d'une métadonnée dans le header, User_Agent permet d'identifier l'application, système ....
-	req.Header.Add("Authorization", "Bearer BQC6bPxdRHfFYit3lpWBI-E9OVXy64nHXCe-Hk6Ru-zgfFheF1P4TJmeUwvdPkcVLJ-cNogjCIB1MNhiJOmxNQjecFUs3zB1oKTA4ZwIvz8Z_Ptob0SOo2NLbxBavBT-u0NCg12tCS0")
+	req.Header.Add("Authorization", TokenType+" "+AccessToken)
 
 	// Execution de la requête HTTP vars L'API
 	res, errResp := httpClient.Do(req)
@@ -117,8 +120,8 @@ func GetDamsosAlbums() {
 
 	// Affichage des données
 	fmt.Println("Nom de l'album :", decodeData.Items[0].Name)
-	fmt.Println("Nombre de musique dans l'album :", decodeData.Items[0].Total_Tracks)
-	fmt.Println("Date de sortie de l'album :", decodeData.Items[0].Release_Date)
+	fmt.Println("Nombre de musique dans l'album :", decodeData.Items[0].TotalTracks)
+	fmt.Println("Date de sortie de l'album :", decodeData.Items[0].ReleaseDate)
 	fmt.Println("Lien de la cover de l'album :", decodeData.Items[0].Images[0])
 }
 
@@ -154,7 +157,7 @@ func GetLaylowsTrack() {
 	}
 
 	// Ajout d'une métadonnée dans le header, User_Agent permet d'identifier l'application, système ....
-	req.Header.Add("Authorization", "Bearer BQC6bPxdRHfFYit3lpWBI-E9OVXy64nHXCe-Hk6Ru-zgfFheF1P4TJmeUwvdPkcVLJ-cNogjCIB1MNhiJOmxNQjecFUs3zB1oKTA4ZwIvz8Z_Ptob0SOo2NLbxBavBT-u0NCg12tCS0")
+	req.Header.Add("Authorization", TokenType+" "+AccessToken)
 
 	// Execution de la requête HTTP vars L'API
 	res, errResp := httpClient.Do(req)
