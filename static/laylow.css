@@ -65,11 +65,24 @@ body {
 
 .container {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 150px;
   position: relative;
-  justify-content: space-evenly;
-  margin-top: 15%;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  background-color: #1db954;
+  text-align: center;
+  height: 250px;
+
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 .imagelaylow {
@@ -77,23 +90,6 @@ body {
   width: 250px;
   border-radius: 15px;
   transition: transform 0.2s;
-  box-shadow: rgba(59, 215, 95, 0.4) 0px 5px, rgba(59, 215, 95, 0.3) 0px 10px,
-    rgba(59, 215, 95, 0.2) 0px 15px, rgba(59, 215, 95, 0.1) 0px 20px,
-    rgba(59, 215, 95, 0.05) 0px 25px;
-}
-
-.imagedamso {
-  height: 250px;
-  width: 250px;
-  border-radius: 15px;
-  transition: transform 0.2s;
-  box-shadow: rgba(59, 215, 95, 0.4) 0px 5px, rgba(59, 215, 95, 0.3) 0px 10px,
-    rgba(59, 215, 95, 0.2) 0px 15px, rgba(59, 215, 95, 0.1) 0px 20px,
-    rgba(59, 215, 95, 0.05) 0px 25px;
-}
-
-.imagedamso:hover {
-  transform: scale(1.1);
 }
 
 .imagelaylow:hover {
@@ -101,9 +97,14 @@ body {
 }
 
 .maladresse {
-  margin-top: 250px;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+p {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
 }

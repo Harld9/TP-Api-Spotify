@@ -18,14 +18,18 @@
     </nav>
 
 
-    <div class="maladresse">
-        <img src="/static/Maladresse.jpg" alt="Image du rappeur Damso" class="imagelaylow2">
-        <p>{{ .ArtistName }}</p>
-        <p>{{ .Title }}</p>
-        <p>{{ .Album }}</p>
-        <p> {{ .AlbumCover }}</p>
-        <p>{{ .ReleaseDate }}</p>
-    </div>
+    <div class="container">
+        <div class="maladresse">
+            <img src="/static/Maladresse.jpg" alt="Image du rappeur Damso" class="imagelaylow">
+        </div>
+        <div class="infos">
+            <p>Artiste : {{ .ArtistName }}</p>
+            <p>Titre : {{ .Title }}</p>
+            <p>Album : {{ .Album }}</p>
+            <p>{{ .AlbumCover }}</p>
+            <p>Date de sortie : {{ .ReleaseDate }}</p>
+        </div>
+
 
 </body>
 

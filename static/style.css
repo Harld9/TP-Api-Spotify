@@ -99,11 +99,3 @@ body {
 .imagelaylow:hover {
   transform: scale(1.1);
 }
-
-.maladresse {
-  margin-top: 250px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
