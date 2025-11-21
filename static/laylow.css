@@ -85,17 +85,6 @@ body {
   align-items: center;
 }
 
-.imagelaylow {
-  height: 250px;
-  width: 250px;
-  border-radius: 15px;
-  transition: transform 0.2s;
-}
-
-.imagelaylow:hover {
-  transform: scale(1.1);
-}
-
 .maladresse {
   color: white;
   display: flex;
@@ -107,4 +96,16 @@ p {
   color: white;
   text-transform: uppercase;
   font-weight: bold;
+}
+.imagelaylow {
+  height: 250px;
+  width: 250px;
+  border-radius: 15px;
+}
+.lecteur {
+  margin-top: 20px;
+}
+
+.container {
+  flex-direction: column;
 }

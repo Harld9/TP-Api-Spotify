@@ -2,6 +2,7 @@ package controller
 
 import (
 	"TpSpotify/functions"
+	structure "TpSpotify/struct"
 	"html/template"
 	"net/http"
 )
@@ -13,11 +14,15 @@ func renderTemplate(w http.ResponseWriter, filename string, data map[string]stri
 }
 
 type PageData struct {
-	ArtistName  string
-	Title       string
-	Album       string
-	AlbumCover  string
-	ReleaseDate string
+	ArtistName           string
+	Title                string
+	Album                string
+	AlbumCover           string
+	ReleaseDate          string
+	NomAlbumDamso        string
+	NbMusiqueAlbumDamso  int
+	DateSortieAlbumDamso string
+	Albums               []structure.AlbumData
 }
 
 func Home(w http.ResponseWriter, r *http.Request) {
@@ -27,7 +32,10 @@ func Home(w http.ResponseWriter, r *http.Request) {
 }
 
 func Damso(w http.ResponseWriter, r *http.Request) {
-	data := PageData{}
+	functions.GetDamsosAlbums()
+	data := PageData{
+		Albums: functions.ListeAlbums,
+	}
 	tmpl := template.Must(template.ParseFiles("template/damso.html"))
 	tmpl.Execute(w, data)
 }

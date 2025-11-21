@@ -17,20 +17,26 @@
         </ul>
     </nav>
 
-
     <div class="container">
-        <div class="maladresse">
-            <img src="/static/Maladresse.jpg" alt="Image du rappeur Damso" class="imagelaylow">
+        <div>
+            <div class="maladresse">
+                <img src="{{ .AlbumCover }}" alt="Image du rappeur Damso" class="imagelaylow">
+            </div>
+            <div class="infos">
+                <p>Artiste : {{ .ArtistName }}</p>
+                <p>Titre : {{ .Title }}</p>
+                <p>Album : {{ .Album }}</p>
+                <p>Date de sortie : {{ .ReleaseDate }}</p>
+            </div>
+            <div class="lecteur">
+                <iframe data-testid="embed-iframe" style="border-radius:12px"
+                    src="https://open.spotify.com/embed/track/67Pf31pl0PfjBfUmvYNDCL?utm_source=generator&theme=0"
+                    width="100%" height="152" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
         </div>
-        <div class="infos">
-            <p>Artiste : {{ .ArtistName }}</p>
-            <p>Titre : {{ .Title }}</p>
-            <p>Album : {{ .Album }}</p>
-            <p>{{ .AlbumCover }}</p>
-            <p>Date de sortie : {{ .ReleaseDate }}</p>
-        </div>
-
-
+    </div>
 </body>
 
 </html>

@@ -16,10 +16,23 @@
             <li><a href="/track/laylow" class="nav-links">Maladresse - Laylow</a></li>
         </ul>
     </nav>
+
+
+    <div class="albums">
+        <h1>Albums de Damso</h1>
+        <div class="listedamso">
+
+            {{ range .Albums }}
+            <div class="albumunique" style="background: #333; padding: 20px; border-radius: 10px; width: 200px;">
+                <img src="{{ .ImageUrl }}" alt="Cover de l'album" class="coverimage">
+                <h2>{{ .Name }}</h2>
+                <p>Sortie le : {{ .ReleaseDate }}</p>
+                <p>{{ .TotalTracks }} titres</p>
+            </div>
+            {{ end }}
+
+        </div>
+    </div>
 </body>
-
-<div class="albums">
-
-</div>
 
 </html>
