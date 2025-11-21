@@ -132,7 +132,7 @@ func GetDamsosAlbums() {
 	json.Unmarshal(body, &decodeData)
 	for i := 0; i <= len(decodeData.Items)-1; i++ {
 		var albumInfos structure.AlbumData
-		// Affichage des données
+		
 		albumInfos.Name = decodeData.Items[i].Name
 		albumInfos.TotalTracks = decodeData.Items[i].TotalTracks
 		albumInfos.ReleaseDate = decodeData.Items[i].ReleaseDate

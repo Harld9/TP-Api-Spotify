@@ -32,11 +32,6 @@
 						"key": "Content-Type",
 						"value": "application/x-www-form-urlencoded",
 						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer  BQAgRsS5GzrZv8kvtL4mmHu7N38K-6Rz9BEmmvxgBL7E_IzSJ2zfxokP6Jpd_k8Ay9fxzYSFfiAunJhtBMYiZvWtzebHlHd3-STxY8XpNrik8IHQpwoN9D8RTSPOV7I0xkbcM3BhkpM",
-						"type": "text"
 					}
 				],
 				"url": {
@@ -93,7 +88,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BQA_aFYOTWmKfhhTBKbtezZ8BLPjzl4pfDYxR2qodQG5eUBcJ5Z8w5M6Ep2XL089n_UsCrivIJ14HBboqcYw_XiUXovSsrO6h92mntxrKcgpAH3TQhlOjvTmhKiDOa9vNnrJ88gr3YA",
+						"value": "Bearer BQBe_b2Q_0fqUhKxZpBIPF81ZgkbpitOs3ex-6exxIrbIsnZWWiHoTlwqszrMjGNdzg1nQDWh6PgWgn54C_l4PJ3i36a0NMzt-78WtbKDlp0xg-CkD1xQQ4-nupuf_YZg_LKgRMoztw",
 						"type": "text"
 					}
 				],
@@ -138,12 +133,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BQA_aFYOTWmKfhhTBKbtezZ8BLPjzl4pfDYxR2qodQG5eUBcJ5Z8w5M6Ep2XL089n_UsCrivIJ14HBboqcYw_XiUXovSsrO6h92mntxrKcgpAH3TQhlOjvTmhKiDOa9vNnrJ88gr3YA",
+						"value": "Bearer BQBe_b2Q_0fqUhKxZpBIPF81ZgkbpitOs3ex-6exxIrbIsnZWWiHoTlwqszrMjGNdzg1nQDWh6PgWgn54C_l4PJ3i36a0NMzt-78WtbKDlp0xg-CkD1xQQ4-nupuf_YZg_LKgRMoztw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+					"raw": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie/albums",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -153,7 +148,8 @@
 					"path": [
 						"v1",
 						"artists",
-						"2UwqpfQtNuhBwviIC0f2ie"
+						"2UwqpfQtNuhBwviIC0f2ie",
+						"albums"
 					]
 				},
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
@@ -183,12 +179,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BQA_aFYOTWmKfhhTBKbtezZ8BLPjzl4pfDYxR2qodQG5eUBcJ5Z8w5M6Ep2XL089n_UsCrivIJ14HBboqcYw_XiUXovSsrO6h92mntxrKcgpAH3TQhlOjvTmhKiDOa9vNnrJ88gr3YA",
+						"value": "Bearer BQBe_b2Q_0fqUhKxZpBIPF81ZgkbpitOs3ex-6exxIrbIsnZWWiHoTlwqszrMjGNdzg1nQDWh6PgWgn54C_l4PJ3i36a0NMzt-78WtbKDlp0xg-CkD1xQQ4-nupuf_YZg_LKgRMoztw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+					"raw": "https://api.spotify.com/v1/albums/4beTtJKeg3ITJsiVuxkiV0/tracks?limit=5",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -197,8 +193,15 @@
 					],
 					"path": [
 						"v1",
-						"artists",
-						"2UwqpfQtNuhBwviIC0f2ie"
+						"albums",
+						"4beTtJKeg3ITJsiVuxkiV0",
+						"tracks"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						}
 					]
 				},
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
@@ -228,12 +231,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BQA_aFYOTWmKfhhTBKbtezZ8BLPjzl4pfDYxR2qodQG5eUBcJ5Z8w5M6Ep2XL089n_UsCrivIJ14HBboqcYw_XiUXovSsrO6h92mntxrKcgpAH3TQhlOjvTmhKiDOa9vNnrJ88gr3YA",
+						"value": "Bearer BQBe_b2Q_0fqUhKxZpBIPF81ZgkbpitOs3ex-6exxIrbIsnZWWiHoTlwqszrMjGNdzg1nQDWh6PgWgn54C_l4PJ3i36a0NMzt-78WtbKDlp0xg-CkD1xQQ4-nupuf_YZg_LKgRMoztw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+					"raw": "https://api.spotify.com/v1/tracks/6nkFbmDY84a9rejFSbIMdj",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -242,8 +245,8 @@
 					],
 					"path": [
 						"v1",
-						"artists",
-						"2UwqpfQtNuhBwviIC0f2ie"
+						"tracks",
+						"6nkFbmDY84a9rejFSbIMdj"
 					]
 				},
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
@@ -273,7 +276,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BQA_aFYOTWmKfhhTBKbtezZ8BLPjzl4pfDYxR2qodQG5eUBcJ5Z8w5M6Ep2XL089n_UsCrivIJ14HBboqcYw_XiUXovSsrO6h92mntxrKcgpAH3TQhlOjvTmhKiDOa9vNnrJ88gr3YA",
+						"value": "Bearer BQBe_b2Q_0fqUhKxZpBIPF81ZgkbpitOs3ex-6exxIrbIsnZWWiHoTlwqszrMjGNdzg1nQDWh6PgWgn54C_l4PJ3i36a0NMzt-78WtbKDlp0xg-CkD1xQQ4-nupuf_YZg_LKgRMoztw",
 						"type": "text"
 					}
 				],
@@ -319,12 +322,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BQA_aFYOTWmKfhhTBKbtezZ8BLPjzl4pfDYxR2qodQG5eUBcJ5Z8w5M6Ep2XL089n_UsCrivIJ14HBboqcYw_XiUXovSsrO6h92mntxrKcgpAH3TQhlOjvTmhKiDOa9vNnrJ88gr3YA",
+						"value": "Bearer BQBe_b2Q_0fqUhKxZpBIPF81ZgkbpitOs3ex-6exxIrbIsnZWWiHoTlwqszrMjGNdzg1nQDWh6PgWgn54C_l4PJ3i36a0NMzt-78WtbKDlp0xg-CkD1xQQ4-nupuf_YZg_LKgRMoztw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.spotify.com/v1/tracks/6nkFbmDY84a9rejFSbIMdj",
+					"raw": "https://api.spotify.com/v1/tracks/67Pf31pl0PfjBfUmvYNDCL",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -334,7 +337,7 @@
 					"path": [
 						"v1",
 						"tracks",
-						"6nkFbmDY84a9rejFSbIMdj"
+						"67Pf31pl0PfjBfUmvYNDCL"
 					]
 				},
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
@@ -364,7 +367,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BQA_aFYOTWmKfhhTBKbtezZ8BLPjzl4pfDYxR2qodQG5eUBcJ5Z8w5M6Ep2XL089n_UsCrivIJ14HBboqcYw_XiUXovSsrO6h92mntxrKcgpAH3TQhlOjvTmhKiDOa9vNnrJ88gr3YA",
+						"value": "Bearer BQBe_b2Q_0fqUhKxZpBIPF81ZgkbpitOs3ex-6exxIrbIsnZWWiHoTlwqszrMjGNdzg1nQDWh6PgWgn54C_l4PJ3i36a0NMzt-78WtbKDlp0xg-CkD1xQQ4-nupuf_YZg_LKgRMoztw",
 						"type": "text"
 					}
 				],
@@ -409,12 +412,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BQA_aFYOTWmKfhhTBKbtezZ8BLPjzl4pfDYxR2qodQG5eUBcJ5Z8w5M6Ep2XL089n_UsCrivIJ14HBboqcYw_XiUXovSsrO6h92mntxrKcgpAH3TQhlOjvTmhKiDOa9vNnrJ88gr3YA",
+						"value": "Bearer BQBe_b2Q_0fqUhKxZpBIPF81ZgkbpitOs3ex-6exxIrbIsnZWWiHoTlwqszrMjGNdzg1nQDWh6PgWgn54C_l4PJ3i36a0NMzt-78WtbKDlp0xg-CkD1xQQ4-nupuf_YZg_LKgRMoztw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+					"raw": "https://api.spotify.com/v1/shows/6y1PloEyNsCNJH9vHias4T/episodes?limit=3",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -423,8 +426,15 @@
 					],
 					"path": [
 						"v1",
-						"artists",
-						"2UwqpfQtNuhBwviIC0f2ie"
+						"shows",
+						"6y1PloEyNsCNJH9vHias4T",
+						"episodes"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "3"
+						}
 					]
 				},
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
@@ -454,12 +464,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer BQDMv1-7f_RUI3UtPiJkNANoMEM-29kXfScb0bTT-F14VMBI19We4vhirJKYJl9N-Z1bTDH6LQhbJ2pY97A9xXrmqdiDg4L9TlW4Y1b0UDOacahNcYvmGo6644GlEICFaq2IHGdZuqU",
+						"value": "Bearer BQBe_b2Q_0fqUhKxZpBIPF81ZgkbpitOs3ex-6exxIrbIsnZWWiHoTlwqszrMjGNdzg1nQDWh6PgWgn54C_l4PJ3i36a0NMzt-78WtbKDlp0xg-CkD1xQQ4-nupuf_YZg_LKgRMoztw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.spotify.com/v1/shows/6oCwS0PfuHQGtA3ZN3kFjg",
+					"raw": "https://api.spotify.com/v1/shows/6y1PloEyNsCNJH9vHias4T/episodes?limit=1&offset=1",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -469,7 +479,18 @@
 					"path": [
 						"v1",
 						"shows",
-						"6oCwS0PfuHQGtA3ZN3kFjg"
+						"6y1PloEyNsCNJH9vHias4T",
+						"episodes"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						}
 					]
 				},
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
